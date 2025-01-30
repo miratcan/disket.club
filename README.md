@@ -1,1 +1,3 @@
-# minnak.site
+# disket.club
+
+Prototip

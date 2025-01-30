@@ -1,0 +1,32 @@
+{% extends 'base.html' %}{% load i18n %}
+{% block title %}disket.club{% endblock %}
+
+{% block content %}
+<style>
+  table {
+    width: 100%;
+  }
+  table th {
+    text-align: left;
+  }
+</style>
+<p>{% trans "Browser based programs, demos, or games that do not exceed the size of a floppy disk." %}</p>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Short Description</th>
+      <th>Author</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for disket in diskettes %}
+    <tr>
+      <td><a href="{% url 'disket_detail' slug=disket.slug %}">{{ disket.title }}</a></td>
+      <td>{{ disket.tagline }}</td>
+      <td>{{ disket.author.username }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

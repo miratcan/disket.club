@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Upload Your Disket" %}{% endblock %}
+
+{% block content %}
+    <h2>{% trans "Upload Your Disket" %}</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td>{{ form.title.label_tag }}</td>
+                <td>{{ form.title }}</td>
+            </tr>
+            <tr>
+                <td>{{ form.tagline.label_tag }}</td>
+                <td>{{ form.tagline }}</td>
+            </tr>
+            <tr>
+                <td>{{ form.description.label_tag }}</td>
+                <td>{{ form.description }}</td>
+                <td>{{ form.description.help_text }}</td>
+            </tr>
+            <tr>
+                <td>{{ form.tags.label_tag }}</td>
+                <td>{{ form.tags }}</td>
+                <td>{{ form.tags.help_text }}</td>
+            </tr>
+            <tr>
+                <td>{{ form.visibility.label_tag }}</td>
+                <td>{{ form.visibility }}</td>
+                <td>{{ form.visibility.help_text }}</td>
+            </tr>
+            <tr>
+                <td>{{ form.aspect_ratio.label_tag }}</td>
+                <td>{{ form.aspect_ratio }}</td>
+                <td>{{ form.aspect_ratio.help_text }}</td>
+            </tr>
+            <tr>
+                <td>{{ form.zip_file.label_tag }}</td>
+                <td>{{ form.zip_file }}</td>
+                <td>{{ form.zip_file.help_text }}
+            </tr>
+            <tr>
+                <td>Agreement</td>
+                <td>
+                    <input type="checkbox" name="agreement" id="agreement">
+                    <label for="agreement">
+                        {% trans "I agree to the terms and conditions" %}
+                    </label>
+                </td>
+                <td>
+                    <p>{% trans "By uploading your disket, you agree to the following: You are the author of the disket, and you will not upload any malware or engage in illegal activities." %}</p>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><button type="submit">{% trans "Upload" %}</button></td>
+            </tr>
+        </table>
+    </form>
+{% endblock %} 

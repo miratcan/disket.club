@@ -14,7 +14,7 @@ from .models import Disket
 class DisketUploadForm(forms.ModelForm):
     class Meta:
         model = Disket
-        fields = ['title', 'tagline', 'tags', 'visibility', 'aspect_ratio', 'zip_file'] 
+        fields = ['title', 'tagline', 'shelf', 'visibility', 'zip_file'] 
 
     def clean_zip_file(self):
         zip_file = self.cleaned_data.get('zip_file')
@@ -38,3 +38,24 @@ class DisketUploadForm(forms.ModelForm):
         except KeyError as e:
             raise forms.ValidationError(f"Error accessing item in the zip file: {e}")
         return zip_file
+    
+
+from .models import Disket, DisketVersion
+
+class DisketEditForm(forms.ModelForm):
+    log = forms.CharField(max_length=255, required=False, help_text="Log of the changes made")
+
+    class Meta:
+        model = Disket
+        fields = ['title', 'tagline', 'shelf', 'visibility', 'zip_file']
+
+    def clean_zip_file(self):
+        return self.cleaned_data.get('zip_file')
+
+    def save(self, commit=True):
+        disket = super().save(commit)
+        DisketVersion.objects.create(
+            disket=disket,
+            log=self.cleaned_data.get('log')
+        )
+        return disket

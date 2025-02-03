@@ -11,9 +11,9 @@
         }
 
         iframe {
-            border: solid 1px #000;
+            border: none;
             width: 100%;
-            height: calc(100vh - 30px);
+            height: calc(100vh - 40px);
         }
 
         html,
@@ -49,10 +49,16 @@
             text-align: left;
         }
 
-        #site-title {
+        #brand a {
             font-weight: bold;
             text-decoration: none;
-            margin-right: 5px;
+        }
+
+        #brand small {
+            font-size: 0.8em;
+            font-weight: normal;
+            line-height: 100%;
+            vertical-align: top;
         }
 
         .errorlist {
@@ -67,8 +73,11 @@
 <body>
     {% block header %}
     <header>
-        <a id="site-title" href="{% url 'homepage' %}">{% trans "disket.club" %}</a><small>{% trans "prototype" %}</small>
+        <span id="brand">
+            <a href="{% url 'homepage' %}">{% trans "disket.club" %}</a><small>{% trans "alfa" %}</small>
+        </span>
         <span class="spacer"></span>
+        {% if user.is_authenticated %}<a href="{% url "profile" user.username %}">{% trans "Profile" %}</a>{% endif %}
         <a href="{% url 'upload_disket' %}">{% trans "Upload" %}</a>
         {% if user.is_authenticated %}<a href="{% url 'account_logout' %}">{% trans "Logout" %}</a>{% else %}
         <a href="{% url 'account_login' %}">{% trans "Login" %}</a>

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Upload Your Disket" %}{% endblock %}
+
+{% block main %}
+<h2>{{ form_title }}</h2>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% for field in form %}
+    <p>
+        {{ field.label_tag }}
+        {{ field }}
+        <small>{{ field.help_text }}</small><br>
+        {% if field.errors %}
+        <ul class="errorlist">
+            {% for error in field.errors %}
+            <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </p>
+    {% endfor %}
+    <p>
+        <label for="agreement">
+            {% trans "I agree to the terms and conditions" %}
+        </label>
+        <input type="checkbox" name="agreement" id="agreement">
+
+        <small>{% trans "By uploading your disket, you agree to the following: You are the author of the disket, and you will not upload any malware or engage in illegal activities." %}</small>
+    </p>
+    <p>
+        <button type="submit">{% trans "Upload" %}</button>
+    </p>
+</form>
+{% endblock %}

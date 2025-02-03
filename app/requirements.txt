@@ -1,2 +1,0 @@
-Django>=5.0,<6.0
-django-allauth requests==2.32.3

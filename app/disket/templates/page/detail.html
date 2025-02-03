@@ -1,75 +1,10 @@
 {% extends 'base.html' %}{% block title %}{{ disket.title }}{% endblock %}
 {% block content %}
-<style>
-  .diskette-detail-columns {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    margin-top: 20px;
-  }
-  .diskette-detail-columns-left {
-    box-sizing: border-box;
-    flex: 1;
-  }
-  .diskette-detail-columns-right {
-    width: 200px;
-  }
-</style>
-<div class="diskette-detail-columns">
-  <div class="diskette-detail-columns-left">
     <iframe
       id="iframe-content"
       src="{{ absolute_content_path }}/index.html"
       style="border:solid 1px #000; width: 100%; aspect-ratio: {{ disket.aspect_ratio }};"
       onerror="this.style.display='none'; document.getElementById('iframe-error').style.display='block';"
     ></iframe>  
-  </div>
-  <div class="diskette-detail-columns-right">
-  <table>
-    <tr>
-      <th>Author</th>
-    </tr>
-    <tr>
-      <td>{{ disket.author.username }}</td>
-    </tr>
-    <tr>
-      <th>Created At</th>
-    </tr>
-    <tr>
-      <td>{{ disket.created_at }}</td>
-    </tr>
-    <tr>
-      <th>Tags</th>
-    </tr>
-    <tr>
-      <td>{{ disket.tags }}</td>
-    </tr>
-    <tr>
-      <th>Visibility</th>
-    </tr>
-    <tr>
-      <td>{{ disket.get_visibility_display }}</td>
-    </tr>
-    <tr>
-      <th>Aspect Ratio</th>
-    </tr>
-    <tr>
-      <td>{{ disket.get_aspect_ratio_display }}</td>
-    </tr>
-  </table>
-
-  </div>
 </div>
-<script>
-  document.getElementById("iframe-content").onload = function () {
-    var iframe = document.getElementById("iframe-content");
-    iframe.style.height =
-      iframe.contentWindow.document.body.scrollHeight + "px";
-  };
-  window.onresize = function () {
-    var iframe = document.getElementById("iframe-content");
-    iframe.style.height =
-      iframe.contentWindow.document.body.scrollHeight + "px";
-  };
-</script>
 {% endblock %}

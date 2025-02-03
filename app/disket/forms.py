@@ -14,7 +14,7 @@ from .models import Disket
 class DisketUploadForm(forms.ModelForm):
     class Meta:
         model = Disket
-        fields = ['title', 'tagline', 'description', 'tags', 'visibility', 'aspect_ratio', 'zip_file'] 
+        fields = ['title', 'tagline', 'tags', 'visibility', 'aspect_ratio', 'zip_file'] 
 
     def clean_zip_file(self):
         zip_file = self.cleaned_data.get('zip_file')

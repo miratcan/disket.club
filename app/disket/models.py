@@ -9,7 +9,6 @@ class Disket(models.Model):
     title = models.CharField(max_length=255, help_text=_("The title of the disket"))
     slug = models.SlugField(unique=True, blank=True, help_text=_("The slug of the disket"))
     tagline = models.CharField(max_length=160, help_text=_("Short description of the disket. Max 160 characters."))
-    description = models.TextField(help_text=_("The description of the disket. Markdown will be supported in the future."))
     tags = models.CharField(max_length=255, help_text=_("The tags of the disket"))
     visibility = models.CharField(
         max_length=10, 

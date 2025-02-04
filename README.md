@@ -13,29 +13,35 @@ disket.club is a web application that allows users to upload and share browser-b
 ### Installation
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/yourusername/disket.club.git
    cd disket.club
    ```
 
 2. Install the dependencies:
+
    ```bash
-   pip install -r requirements.txt
+   poetry install
    ```
 
 3. Apply migrations:
+
    ```bash
-   python manage.py migrate
+   poetry run python manage.py migrate
    ```
 
 4. Create a superuser:
+
    ```bash
-   python manage.py createsuperuser
+   poetry run python manage.py createsuperuser
    ```
 
 5. Run the development server:
+
    ```bash
-   python manage.py runserver
+   poetry run python manage.py runserver
+
    ```
 
 6. Access the application at `http://127.0.0.1:8000/`.

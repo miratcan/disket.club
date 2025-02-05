@@ -1,10 +1,15 @@
-{% load i18n %}
+{% load i18n randint %}
 <div class="disket-list">
-{% for disket in diskettes %}
-<a class="disket" href="{% url 'disket_detail' slug=disket.slug %}">
-  <div class="disket-label">
-    {{ disket.label }}
+  {% for disket in diskettes %}
+  <div class="disket-list-item">
+    {% randint rotation -10 10 %}
+    <a
+      class="disket"
+      href="{% url 'disket_detail' slug=disket.slug %}"
+      style="transform: rotate({{ rotation }}deg)"
+    >
+      <div class="disket-label" style="font-size: {% if disket.label|length > 10 %}1.5rem{% else %}2rem{% endif %}">{{ disket.label }}</div>
+    </a>
   </div>
-</a>
-{% endfor %}
+  {% endfor %}
 </div>

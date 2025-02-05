@@ -3,19 +3,19 @@
 {% block main %} 
 
   <details>
-    <summary>Select Shelf</summary>
+    <summary>{% trans "Select Shelf" %}</summary>
     <ul>
-      <li><a href="{% url 'homepage' %}">Home</a></li>
-      <li><a href="{% url 'shelf' shelf='games' %}">Games</a></li>
-      <li><a href="{% url 'shelf' shelf='apps' %}">Apps</a></li>
-      <li><a href="{% url 'shelf' shelf='tools' %}">Tools</a></li>
-      <li><a href="{% url 'shelf' shelf='other' %}">Other</a></li>
+      <li><a href="{% url 'homepage' %}">{% trans "All" %}</a></li>
+      <li><a href="{% url 'shelf' shelf='games' %}">{% trans "Games" %}</a></li>
+      <li><a href="{% url 'shelf' shelf='apps' %}">{% trans "Apps" %}</a></li>
+      <li><a href="{% url 'shelf' shelf='tools' %}">{% trans "Tools" %}</a></li>
+      <li><a href="{% url 'shelf' shelf='other' %}">{% trans "Other" %}</a></li>
     </ul>
   </details>
   {% if shelf %}
-  <p>Listing {{ diskettes.count }} diskettes, on {{ shelf }}.</p>
+    <p>{% blocktrans %}Listing {{ diskettes.count }} diskettes, on {{ shelf }}.{% endblocktrans %}</p>
   {% else %}
-  <p>Listing {{ diskettes.count }} diskettes</p>
+    <p>{% blocktrans %}Listing {{ diskettes.count }} diskettes{% endblocktrans %}</p>
   {% endif %} 
   {% include 'disket/_list.html' %}
 </div>

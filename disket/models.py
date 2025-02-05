@@ -1,13 +1,15 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils.text import slugify
-from django.utils.translation import gettext_lazy as _
+from django.utils.translation import gettext as _
 import uuid
 
 class Shelf(models.TextChoices):
     games = 'games', _('games')
     apps = 'apps', _('apps')
     tools = 'tools', _('tools')
+    time_wasters = 'time_wasters', _('time wasters')
+    demos = 'demos', _('demos')
     other = 'other', _('other')
 
 class Visibility(models.TextChoices):

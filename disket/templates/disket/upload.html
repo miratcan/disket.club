@@ -1,27 +1,25 @@
-{% extends 'base.html' %}
-{% load i18n %}
-
-{% block title %}{% trans "Upload Your Disket" %}{% endblock %}
-
-{% block main %}
-
-{% trans "Upload Your Disket" %}
+{% extends 'base.html' %} {% load i18n %} {% block title %}{% trans "Upload Your
+Disket" %}{% endblock %} {% block main %} {% trans "Upload Your Disket" %}
 
 <form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <p>
-        <label for="agreement">
-            {% trans "I agree to the terms and conditions" %}
-        </label>
-        <input type="checkbox" name="agreement" id="agreement">
+  {% csrf_token %} {{ form.as_p }}
+  <blockquote>
+    {% trans "By uploading your disket, you agree to the following:" %}"
+    <ul>
+        <li>{% trans "You are the author of the disket" %}</li>
+        <li>{% trans "You will not upload any malware or engage in illegal activities" %}</li>
+    </ul>
+  </blockquote>
 
-        <small>{% trans "By uploading your disket, you agree to the following: You are the author of the disket, and you will not upload any malware or engage in illegal activities." %}</small>
-    </p>
-    <p>
-        <button type="submit">{% trans "Upload" %}</button>
-    </p>
+  <p>
+    <label for="agreement">
+      {% trans "I agree to the terms and conditions" %}
+    </label>
+    <input type="checkbox" name="agreement" id="agreement" />
+  </p>
+  <p>
+    <button type="submit">{% trans "Upload" %}</button>
+  </p>
 </form>
-
 
 {% endblock %}

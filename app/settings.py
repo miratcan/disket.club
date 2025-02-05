@@ -51,13 +51,13 @@ SITE_ID = 1
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.middleware.locale.LocaleMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "allauth.account.middleware.AccountMiddleware",
-    "django.middleware.locale.LocaleMiddleware",
 ]
 
 ROOT_URLCONF = "app.urls"
@@ -118,7 +118,7 @@ LANGUAGE_CODE = "tr"
 
 TIME_ZONE = "UTC"
 
-USE_I18N = False
+USE_I18N = True
 
 USE_TZ = True
 
@@ -143,12 +143,7 @@ STATICFILES_DIRS = [
 STATIC_ROOT = BASE_DIR / 'static'
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-# Add this line to specify the available languages
-LANGUAGES = [
-    ('en', 'English'),
-    ('tr', 'Turkish'),
-]
-
 LOCALE_PATHS = [
     os.path.join(BASE_DIR, 'locale'),
 ]
+print(LOCALE_PATHS)

@@ -1,25 +1,23 @@
 {% extends 'base.html' %}{% load i18n %}
 {% block title %}disket.club{% endblock %}
+{% block main %} 
 
-{% block main %}
-{% if not shelf %}
-<p>{% trans "Browser based apps, demos, or games that do not exceed the size of a floppy disk." %}</p>
-{% endif %}
-
-<p class="shelf-selector">
-  {% if not shelf %}
-    <a href="{% url 'shelf' shelf='games' %}">Games</a>
-    <a href="{% url 'shelf' shelf='apps' %}">Apps</a>
-    <a href="{% url 'shelf' shelf='tools' %}">Tools</a>
-    <a href="{% url 'shelf' shelf='other' %}">Other</a>
-  {% endif %}
-</p>
-
-{% if shelf %}
+  <details>
+    <summary>Select Shelf</summary>
+    <ul>
+      <li><a href="{% url 'homepage' %}">Home</a></li>
+      <li><a href="{% url 'shelf' shelf='games' %}">Games</a></li>
+      <li><a href="{% url 'shelf' shelf='apps' %}">Apps</a></li>
+      <li><a href="{% url 'shelf' shelf='tools' %}">Tools</a></li>
+      <li><a href="{% url 'shelf' shelf='other' %}">Other</a></li>
+    </ul>
+  </details>
+  {% if shelf %}
   <p>Listing {{ diskettes.count }} diskettes, on {{ shelf }}.</p>
-{% else %}
+  {% else %}
   <p>Listing {{ diskettes.count }} diskettes</p>
-{% endif %}
+  {% endif %} 
+  {% include 'disket/_list.html' %}
+</div>
 
-{% include 'disket/_list.html' %}
 {% endblock %}

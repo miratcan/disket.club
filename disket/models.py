@@ -20,7 +20,7 @@ class Agreement(models.TextChoices):
 
 class Disket(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name=_("Author"))
-    title = models.CharField(max_length=255, help_text=_("The title of the disket"), verbose_name=_("Title"))
+    label = models.CharField(max_length=255, help_text=_("The title of the disket"), verbose_name=_("Label"))
     slug = models.SlugField(unique=True, blank=True, help_text=_("The slug of the disket"), verbose_name=_("Slug"))
     tagline = models.CharField(max_length=160, help_text=_("Short description of the disket. Max 160 characters."), verbose_name=_("Tagline"))
     shelf = models.CharField(max_length=255, choices=Shelf.choices, help_text=_("The shelf of the disket"), verbose_name=_("Shelf"))
@@ -32,7 +32,7 @@ class Disket(models.Model):
 
     def save(self, *args, **kwargs):
         if not self.slug:
-            self.slug = slugify(f"{self.title}-{uuid.uuid4()}")
+            self.slug = slugify(f"{self.label}-{uuid.uuid4()}")
         super().save(*args, **kwargs)
 
     class Meta:
@@ -45,7 +45,7 @@ class DisketVersion(models.Model):
     created_at = models.DateTimeField(auto_now_add=True, help_text=_("The date and time the disket version was created"), verbose_name=_("Created At"))
     
     def __str__(self):
-        return f"{self.disket.title} - {self.created_at}"
+        return f"{self.disket.label} - {self.created_at}"
     
     class Meta:
         verbose_name = _("Disket Version")

@@ -8,13 +8,13 @@ from django.core.files.storage import default_storage
 from django.core.files.base import ContentFile
 from django.conf import settings
 
-from .models import Disket
+from .models import Disket, Shelf, Visibility
 
 
 class DisketUploadForm(forms.ModelForm):
     class Meta:
         model = Disket
-        fields = ['title', 'tagline', 'shelf', 'visibility', 'zip_file'] 
+        fields = ['label', 'tagline', 'shelf', 'visibility', 'zip_file'] 
 
     def clean_zip_file(self):
         zip_file = self.cleaned_data.get('zip_file')
@@ -38,7 +38,6 @@ class DisketUploadForm(forms.ModelForm):
         except KeyError as e:
             raise forms.ValidationError(f"Error accessing item in the zip file: {e}")
         return zip_file
-    
 
 from .models import Disket, DisketVersion
 
@@ -47,7 +46,7 @@ class DisketEditForm(forms.ModelForm):
 
     class Meta:
         model = Disket
-        fields = ['title', 'tagline', 'shelf', 'visibility', 'zip_file']
+        fields = ['label', 'tagline', 'shelf', 'visibility', 'zip_file']
 
     def clean_zip_file(self):
         return self.cleaned_data.get('zip_file')

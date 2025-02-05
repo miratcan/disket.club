@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+
+:root {
+  /* Color */
+  --text-color: #222222;
+  --surface: #c0c0c0;
+  --button-highlight: #ffffff;
+  --button-face: #dfdfdf;
+  --button-shadow: #808080;
+  --window-frame: #0a0a0a;
+  --dialog-blue: #000080;
+  --dialog-blue-light: #1084d0;
+  --dialog-gray: #808080;
+  --dialog-gray-light: #b5b5b5;
+  --link-blue: #0000ff;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: var(--surface);
+}
+
+a {
+  color: var(--link-blue);
+}
+
+button,
+input[type="submit"] {
+  background-color: var(--button-face);
+  border: 1px solid var(--button-shadow);
+  color: var(--text-color);
+}
+
+header {
+  background-color: var(--button-face);
+  border-bottom: 1px solid var(--button-shadow);
+  color: var(--text-color);
+  height: 30px;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 100%;
+}
+
+header nav .spacer {
+  flex: 1;
+}
+
+header,
+main {
+  padding: 10px;
+}
+
+main {
+  background-color: var(--surface);
+  color: var(--text-color);
+  padding: 10px;
+}
+
+form {
+  max-width: 400px;
+  border: 1px solid var(--button-shadow);
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+form label,
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="submit"],
+form select,
+form textarea {
+  display: block;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+form label {
+  margin-bottom: 5px;
+}
+
+form input[type="submit"] {
+  margin-top: 10px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid var(--button-shadow);
+  background-color: var(--button-face);
+  color: var(--text-color);
+}
+
+.disket-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 200px);
+  gap: 10px;
+}
+
+.disket {
+  background: url(../img/disket.png) no-repeat center center;
+  background-size: contain;
+  aspect-ratio: 368 / 382;
+  display: block;
+  max-width: 200px;
+  position: relative;
+}
+
+.disket-label {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  aspect-ratio: 300 / 222;
+  position: absolute;
+  top: 45%;
+  left: 10%;
+  width: 80%;
+  height: 55%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: var(--button-face);
+  font-family: 'Caveat', cursive;
+  font-size: 2rem;
+  overflow: hidden;
+}

@@ -10,6 +10,11 @@ disket.club is a web application that allows users to upload and share browser-b
 - **Categorization**: Projects can be categorized into games, apps, tools, and others.
 - **Localization**: The application supports multiple languages, including English and Turkish.
 
+### Prerequisites
+
+- Python 3.10+
+- [Poetry](https://github.com/python-poetry/install.python-poetry.org)
+
 ### Installation
 
 1. Clone the repository:

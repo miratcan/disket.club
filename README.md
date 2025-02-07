@@ -1,86 +1,14 @@
 # disket.club
 
-Prototip
-disket.club is a web application that allows users to upload and share browser-based apps, demos, or games that do not exceed the size of a floppy disk. The platform supports multiple categories such as games, apps, tools, and others.
+disket.club, kullanıcıların bir disket boyutunu aşmayan tarayıcı tabanlı uygulamaları, demoları veya oyunları yükleyip paylaşmasına olanak tanıyan bir web uygulamasıdır. Platform, oyunlar, uygulamalar, araçlar ve diğer kategorileri destekler.
 
-### Features
+## Amaçlar
 
-- **User Authentication**: Users can sign up, log in, and manage their profiles.
-- **Upload and Share**: Users can upload their projects and share them with others.
-- **Categorization**: Projects can be categorized into games, apps, tools, and others.
-- **Localization**: The application supports multiple languages, including English and Turkish.
+ 1. Türkiye'deki yazılımcılar için yaratıcı işlerinin paylaşıldığı, yorumlandığı, tanıtıldığı bir alan olmak.
+ 2. Yazılımcılar ya da yazılımları tüketecek kişiler için eğlenceli bir ortam olmak.
+ 3. Eğer bir para kazanma modeli oluşturulabilir ise üreticiler arasında adil bir şekilde paylaşılmasını sağlamak.
 
-### Prerequisites
+## Yardım ve Yataklık
 
-- Python 3.10+
-- [Poetry](https://github.com/python-poetry/install.python-poetry.org)
-- `django-environ` package
+Şu an her türlü yardım gerekli, hata bildirimleri bile çok kıymetli. Hatta bu kısmın tekrar yazılması için bile yardıma ihtiyaç var. Proje Django ile geliştirilmekte, ve günün gerektirdiği en modern standartlara uyulmaya çalışılmaktadır.
 
-### Installation
-
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/yourusername/disket.club.git
-   cd disket.club
-   ```
-
-2. Create a virtual environment and synchronize the dependencies:
-
-   ```bash
-   uv synch
-   ```
-
-5. Apply migrations:
-
-   ```bash
-   uv run python manage.py migrate
-   ```
-
-6. Create a superuser:
-
-   ```bash
-   uv run python manage.py createsuperuser
-   ```
-
-7. Run the development server:
-
-   ```bash
-   uv run python manage.py runserver
-   ```
-
-8. Access the application at `http://127.0.0.1:8000/`.
-
-### Usage
-
-- **Homepage**: The homepage displays a list of available projects categorized into games, apps, tools, and others.
-- **Upload**: Authenticated users can upload their projects using the upload page.
-- **Profile**: Users can view and edit their profiles.
-- **Localization**: Users can switch between supported languages (English and Turkish).
-
-### Contributing
-
-1. Fork the repository.
-2. Create a new branch:
-   ```bash
-   git checkout -b feature-branch
-   ```
-3. Make your changes and commit them:
-   ```bash
-   git commit -m "Description of your changes"
-   ```
-4. Push to the branch:
-   ```bash
-   git push origin feature-branch
-   ```
-5. Create a pull request.
-
-### License
-
-This project is licensed under the MIT License. See the LICENSE file for details.
-
-### Acknowledgements
-
-- Django: The web framework used for this project.
-- Poedit: Used for localization.
-- All contributors and users for their support and feedback.

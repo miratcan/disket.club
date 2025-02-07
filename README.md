@@ -4,7 +4,7 @@ disket.club, kullanıcıların bir disket boyutunu aşmayan tarayıcı tabanlı 
 
 ## Amaçlar
 
- 1. Türkiye'deki yazılımcılar için yaratıcı işlerinin paylaşıldığı, yorumlandığı, tanıtıldığı bir alan olmak.
+ 1. Türkçe konuşan yazılımcılar için yaratıcı işlerinin paylaşıldığı, yorumlandığı, tanıtıldığı bir alan olmak.
  2. Yazılımcılar ya da yazılımları tüketecek kişiler için eğlenceli bir ortam olmak.
  3. Eğer bir para kazanma modeli oluşturulabilir ise üreticiler arasında adil bir şekilde paylaşılmasını sağlamak.
 

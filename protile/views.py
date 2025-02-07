@@ -2,6 +2,7 @@ from django.views.generic import DetailView
 from disket.models import Disket
 from django.contrib.auth.models import User
 
+
 class ProfileView(DetailView):
     model = User
     template_name = 'protile/detail.html'

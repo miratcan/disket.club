@@ -11,5 +11,7 @@
       <div class="disket-label" style="font-size: {% if disket.label|length > 10 %}1.5rem{% else %}2rem{% endif %}">{{ disket.label }}</div>
     </a>
   </div>
+  {% empty %}
+  <p>No diskettes found :(</p>
   {% endfor %}
 </div>

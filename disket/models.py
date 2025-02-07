@@ -6,12 +6,12 @@ import uuid
 
 
 class Shelf(models.TextChoices):
-    games = "games", _("games")
-    apps = "apps", _("apps")
-    tools = "tools", _("tools")
-    time_wasters = "time_wasters", _("time wasters")
-    demos = "demos", _("demos")
-    other = "other", _("other")
+    games = "games", _("Games")
+    apps = "apps", _("Apps")
+    tools = "tools", _("Tools")
+    time_wasters = "time_wasters", _("Time Wasters")
+    demos = "demos", _("Demos")
+    other = "other", _("Other")
 
 
 class Visibility(models.TextChoices):
@@ -30,7 +30,9 @@ class Disket(models.Model):
     )
     label = models.CharField(
         max_length=255,
-        help_text=_("The title of the disket"),
+        help_text=_(
+            "The text that will be written on the label of the disket"
+        ),
         verbose_name=_("Label"),
     )
     slug = models.SlugField(
@@ -38,11 +40,6 @@ class Disket(models.Model):
         blank=True,
         help_text=_("The slug of the disket"),
         verbose_name=_("Slug"),
-    )
-    tagline = models.CharField(
-        max_length=160,
-        help_text=_("Short description of the disket. Max 160 characters."),
-        verbose_name=_("Tagline"),
     )
     shelf = models.CharField(
         max_length=255,

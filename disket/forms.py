@@ -12,7 +12,7 @@ from .models import Disket, DisketVersion
 class DisketUploadForm(forms.ModelForm):
     class Meta:
         model = Disket
-        fields = ["label", "tagline", "shelf", "visibility", "zip_file"]
+        fields = ["label", "shelf", "visibility", "zip_file"]
 
     def clean_zip_file(self):
         zip_file = self.cleaned_data.get("zip_file")
@@ -53,7 +53,7 @@ class DisketEditForm(forms.ModelForm):
 
     class Meta:
         model = Disket
-        fields = ["label", "tagline", "shelf", "visibility", "zip_file"]
+        fields = ["label", "shelf", "visibility", "zip_file"]
 
     def clean_zip_file(self):
         return self.cleaned_data.get("zip_file")

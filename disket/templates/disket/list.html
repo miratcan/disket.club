@@ -1,23 +1,13 @@
 {% extends 'base.html' %}{% load i18n %}
 {% block title %}disket.club{% endblock %}
 {% block main %} 
-
-  <details>
-    <summary>{% trans "Select Shelf" %}</summary>
-    <ul>
-      <li><a href="{% url 'homepage' %}">{% trans "All" %}</a></li>
-      <li><a href="{% url 'shelf' shelf='games' %}">{% trans "Games" %}</a></li>
-      <li><a href="{% url 'shelf' shelf='apps' %}">{% trans "Apps" %}</a></li>
-      <li><a href="{% url 'shelf' shelf='tools' %}">{% trans "Tools" %}</a></li>
-      <li><a href="{% url 'shelf' shelf='other' %}">{% trans "Other" %}</a></li>
-    </ul>
-  </details>
-  {% if shelf %}
-    <p>{% blocktrans %}Listing {{ diskettes.count }} diskettes, on {{ shelf }}.{% endblocktrans %}</p>
-  {% else %}
-    <p>{% blocktrans %}Listing {{ diskettes.count }} diskettes{% endblocktrans %}</p>
-  {% endif %} 
+<p style="text-align: center; font-size: 1.5rem; font-weight: bold;">1.44mb altı yaratıcı kod yazarlığı</p>
+  <p style="display: flex; gap: 1rem; justify-content: center;">
+      <a href="{% url 'homepage' %}">{% trans "All" %}</a>
+      {% for key, value in shelves %}
+        <a href="{% url 'shelf' shelf=key %}">{{ value }}</a>
+      {% endfor %}
+  </p>
   {% include 'disket/_list.html' %}
 </div>
-
 {% endblock %}

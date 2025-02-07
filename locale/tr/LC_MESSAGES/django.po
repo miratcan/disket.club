@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-05 12:37+0000\n"
-"PO-Revision-Date: 2025-02-05 15:41+0300\n"
+"POT-Creation-Date: 2025-02-07 13:23+0000\n"
+"PO-Revision-Date: 2025-02-07 16:24+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: tr\n"
@@ -19,180 +19,160 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.4.2\n"
 
-#: disket/models.py:8
-msgid "games"
-msgstr "oyunlar"
-
 #: disket/models.py:9
-msgid "apps"
-msgstr "uygulamalar"
+msgid "Games"
+msgstr "Oyunlar"
 
 #: disket/models.py:10
-msgid "tools"
-msgstr "araçlar"
+msgid "Apps"
+msgstr "Uygulamalar"
 
 #: disket/models.py:11
-msgid "time wasters"
-msgstr "zaman öldürücü"
+msgid "Tools"
+msgstr "Araçlar"
 
 #: disket/models.py:12
-msgid "demos"
-msgstr "demolar"
+msgid "Time Wasters"
+msgstr "Zaman Öldürücüler"
 
 #: disket/models.py:13
-msgid "other"
-msgstr "diğer"
+msgid "Demos"
+msgstr "Demolar"
 
-#: disket/models.py:16
+#: disket/models.py:14
+msgid "Other"
+msgstr "Diğer"
+
+#: disket/models.py:18
 msgid "public"
 msgstr "halka açık"
 
-#: disket/models.py:17
+#: disket/models.py:19
 msgid "unlisted"
 msgstr "listelenmemiş"
 
-#: disket/models.py:20
+#: disket/models.py:23
 msgid "agree"
 msgstr "kabul ettim"
 
-#: disket/models.py:21
+#: disket/models.py:24
 msgid "disagree"
 msgstr "kabul etmem"
 
-#: disket/models.py:24
+#: disket/models.py:29
 msgid "Author"
 msgstr "Sahibi"
 
-#: disket/models.py:25
+#: disket/models.py:33
 msgid "The title of the disket"
 msgstr "Disketin başlığı"
 
-#: disket/models.py:25
+#: disket/models.py:34
 msgid "Label"
 msgstr "İsim"
 
-#: disket/models.py:26
+#: disket/models.py:39
 msgid "The slug of the disket"
 msgstr "Disketin takozu"
 
-#: disket/models.py:26
+#: disket/models.py:40
 msgid "Slug"
 msgstr "Kısa İsim"
 
-#: disket/models.py:27
+#: disket/models.py:44
 msgid "Short description of the disket. Max 160 characters."
 msgstr "Disketin kısa açıklaması, en fazla 160 karakter."
 
-#: disket/models.py:27
+#: disket/models.py:45
 msgid "Tagline"
 msgstr "Slogan"
 
-#: disket/models.py:28
+#: disket/models.py:50
 msgid "The shelf of the disket"
 msgstr "Disketin durduğu raf"
 
-#: disket/models.py:28
+#: disket/models.py:51
 msgid "Shelf"
 msgstr "Raf"
 
-#: disket/models.py:29
+#: disket/models.py:56
 msgid "The visibility of the disket"
 msgstr "Disketin görünürlüğü"
 
-#: disket/models.py:29
+#: disket/models.py:57
 msgid "Visibility"
 msgstr "Görünürlük"
 
-#: disket/models.py:30
+#: disket/models.py:61
 msgid "The zip file of the disket"
 msgstr "Zip dosyası"
 
-#: disket/models.py:30
+#: disket/models.py:62
 msgid "Zip File"
 msgstr "Zip Dosyası"
 
-#: disket/models.py:31
+#: disket/models.py:66
 msgid "The date and time the disket was created"
 msgstr "Disketin oluşturulma tarih ve zamanı"
 
-#: disket/models.py:31 disket/models.py:47
+#: disket/models.py:67 disket/models.py:106
 msgid "Created At"
 msgstr "Oluşturulma"
 
-#: disket/models.py:32
+#: disket/models.py:71
 msgid "Whether the disket has been approved"
 msgstr "Disket onaylı mı değil mi"
 
-#: disket/models.py:32
+#: disket/models.py:72
 msgid "Approved"
 msgstr "Onaylandı"
 
-#: disket/models.py:33
+#: disket/models.py:77
 msgid "The path to the content of the disket"
 msgstr "Disketin içerik yolu"
 
-#: disket/models.py:33
+#: disket/models.py:78
 msgid "Content Path"
 msgstr "İçerik Yolu"
 
-#: disket/models.py:41 disket/models.py:45
+#: disket/models.py:87 disket/models.py:94
 msgid "Disket"
 msgstr "Disket"
 
-#: disket/models.py:42
+#: disket/models.py:88
 msgid "Diskets"
 msgstr "Disketler"
 
-#: disket/models.py:46
+#: disket/models.py:98
 msgid "The log of the disket version"
 msgstr "Disket versiyonunun logu"
 
-#: disket/models.py:46
+#: disket/models.py:101
 msgid "Log"
 msgstr "Kayıt"
 
-#: disket/models.py:47
+#: disket/models.py:105
 msgid "The date and time the disket version was created"
 msgstr "Disket versiyonunun oluşturulma tarih ve zamanı"
 
-#: disket/models.py:53
+#: disket/models.py:113
 msgid "Disket Version"
 msgstr "Disket Sürümü"
 
-#: disket/models.py:54
+#: disket/models.py:114
 msgid "Disket Versions"
 msgstr "Disket Versiyonları"
 
 #: disket/templates/disket/list.html:6
-msgid "Select Shelf"
-msgstr "Raf Seç"
-
-#: disket/templates/disket/list.html:8
 msgid "All"
 msgstr "Hepsi"
 
-#: disket/templates/disket/list.html:9
-msgid "Games"
-msgstr "Oyunlar"
-
-#: disket/templates/disket/list.html:10
-msgid "Apps"
-msgstr "Uygulamalar"
-
-#: disket/templates/disket/list.html:11
-msgid "Tools"
-msgstr "Araçlar"
-
 #: disket/templates/disket/list.html:12
-msgid "Other"
-msgstr "Diğer"
-
-#: disket/templates/disket/list.html:16
 #, python-format
 msgid "Listing %(diskettes.count)s diskettes, on %(shelf)s."
 msgstr "%(shelf)s içindeki %(diskettes.count)s disket listelendi."
 
-#: disket/templates/disket/list.html:18
+#: disket/templates/disket/list.html:14
 #, python-format
 msgid "Listing %(diskettes.count)s diskettes"
 msgstr "%(diskettes.count)s disket listelendi"
@@ -217,21 +197,36 @@ msgstr "Abuk subuk malware falan yüklemeyeceğim"
 msgid "I agree to the terms and conditions"
 msgstr "Ölüm dahil tümsikleri kabul ediyorum"
 
-#: disket/templates/disket/upload.html:21 templates/base.html:25
+#: disket/templates/disket/upload.html:21 templates/base.html:17
 msgid "Upload"
 msgstr "Gönder"
 
-#: templates/base.html:24
+#: templates/base.html:16
 msgid "Profile"
 msgstr "Profil"
 
-#: templates/base.html:26
+#: templates/base.html:18
 msgid "Logout"
 msgstr "Çıkış Yap"
 
-#: templates/base.html:27
+#: templates/base.html:19
 msgid "Login"
 msgstr "Giriş Yap"
+
+#~ msgid "games"
+#~ msgstr "oyunlar"
+
+#~ msgid "apps"
+#~ msgstr "uygulamalar"
+
+#~ msgid "tools"
+#~ msgstr "araçlar"
+
+#~ msgid "other"
+#~ msgstr "diğer"
+
+#~ msgid "Select Shelf"
+#~ msgstr "Raf Seç"
 
 #~ msgid "By uploading your disket, you agree to the following: You are the author of the disket, and you will not upload any malware or engage in illegal activities."
 #~ msgstr "Disketinizi yükleyerek aşağıdakileri kabul etmiş olursunuz: Disketin yazarı sizsiniz ve herhangi bir kötü amaçlı yazılım yüklemeyecek veya yasa dışı faaliyetlerde bulunmayacaksınız."

@@ -5,7 +5,7 @@ from django.views.generic import CreateView, DetailView, ListView, UpdateView
 from django.views.static import serve
 
 from .forms import DisketUploadForm, DisketEditForm
-from .models import Disket
+from .models import Disket, Shelf
 
 
 class UploadView(LoginRequiredMixin, CreateView):
@@ -73,6 +73,11 @@ class HomeView(ListView):
         # return Disket.objects.filter(visibility='listed', approved=True)
         return Disket.objects.all()
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["shelves"] = Shelf.choices
+        return context
+
 
 class DisketShelfView(ListView):
     model = Disket
@@ -84,7 +89,7 @@ class DisketShelfView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["shelf"] = self.kwargs["shelf"]
+        context["shelves"] = Shelf.choices
         return context
 
 

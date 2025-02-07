@@ -12,20 +12,34 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import os
+import environ
+
+# Initialize environment variables
+env = environ.Env(
+    # Set casting, default value
+    DEBUG=(bool, False),
+    MEDIA_ROOT=(str, 'media'),
+    STATICFILES_DIRS=(list, ['assets']),
+)
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+
+# Take environment variables from .env file
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-38xt85(%(fjf3zgbsw&_eo@#boyqy7q)2-p8icbprgpmy9&_od"
+SECRET_KEY = env('SECRET_KEY', default='django-insecure-38xt85(%(fjf3zgbsw&_eo@#boyqy7q)2-p8icbprgpmy9&_od')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env('DEBUG', default=True)
 
-ALLOWED_HOSTS = []
+# Update the ALLOWED_HOSTS setting
+ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=[])
 
 
 # Application definition
@@ -85,10 +99,7 @@ WSGI_APPLICATION = "app.wsgi.application"
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-    }
+    'default': env.db(default='sqlite:///db.sqlite3'),
 }
 
 
@@ -129,17 +140,13 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # Media files (Uploaded files)
 # https://docs.djangoproject.com/en/5.0/ref/settings/#media-root
-
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_ROOT = env('MEDIA_ROOT', default=BASE_DIR / 'media')
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
-
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'assets'),
-]
+STATICFILES_DIRS = env.list('STATICFILES_DIRS', default=[os.path.join(BASE_DIR, 'assets')])
 STATIC_ROOT = BASE_DIR / 'static'
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 

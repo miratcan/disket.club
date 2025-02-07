@@ -14,6 +14,7 @@ disket.club is a web application that allows users to upload and share browser-b
 
 - Python 3.10+
 - [Poetry](https://github.com/python-poetry/install.python-poetry.org)
+- `django-environ` package
 
 ### Installation
 
@@ -24,32 +25,31 @@ disket.club is a web application that allows users to upload and share browser-b
    cd disket.club
    ```
 
-2. Install the dependencies:
+2. Create a virtual environment and synchronize the dependencies:
 
    ```bash
-   poetry install
+   uv synch
    ```
 
-3. Apply migrations:
+5. Apply migrations:
 
    ```bash
-   poetry run python manage.py migrate
+   uv run python manage.py migrate
    ```
 
-4. Create a superuser:
+6. Create a superuser:
 
    ```bash
-   poetry run python manage.py createsuperuser
+   uv run python manage.py createsuperuser
    ```
 
-5. Run the development server:
+7. Run the development server:
 
    ```bash
-   poetry run python manage.py runserver
-
+   uv run python manage.py runserver
    ```
 
-6. Access the application at `http://127.0.0.1:8000/`.
+8. Access the application at `http://127.0.0.1:8000/`.
 
 ### Usage
 

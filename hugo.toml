@@ -1,0 +1,4 @@
+baseURL = 'https://disket.club/'
+languageCode = 'en-us'
+title = 'Disket Club'
+theme = 'dusty'

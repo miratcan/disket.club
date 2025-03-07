@@ -1,0 +1,30 @@
+{{ define "main" }}
+<div class="text-center mb-8">
+  <h1 class="text-4xl font-bold text-gray-800 mb-4">Our Products</h1>
+  <p class="text-gray-600">Discover our amazing collection of products</p>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6">
+  {{ range .Site.Data.products }}
+  <a href="{{ .ProductURL }}" class="bg-white rounded-lg shadow-md overflow-hidden">
+  <img class="bg-white rounded-lg shadow-md overflow-hidden">
+    {{ with .CategoryName }}
+      <p class="text-sm text-gray-500">{{ . }}</p>
+    {{ end }}
+    {{ if .ImageURL }}
+      <img src="{{ .ImageURL }}" alt="{{ .Name }}" class="w-full h-48 object-contain" />
+    {{ end }}
+    <div class="p-4">
+      <h2 class="text-md font-semibold text-gray-800 mb-2">{{ .Name }}</h2>
+      {{ if .Description }}
+        <p class="text-gray-600 mb-4">{{ .Description }}</p>
+      {{ end }}
+      {{ if .Price }}
+        <p class="text-lg font-bold text-green-600">${{ .Price }}</p>
+      {{ end }}
+    </div>
+  </div>
+  </a>
+  {{ end }}
+</div>
+{{ end }}
